@@ -63,6 +63,7 @@ console.log(x);
 
 - 이러한 문제를 해결하기 위해 ES6+ 부터는 let , const 키워드로 변수를 선언
 */
+
 // console.log(y);
 let y = 10;
 if (true) {
