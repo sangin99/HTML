@@ -166,8 +166,8 @@ console.log('==============================');
     splice(start, eleteCount, items...) :
     - 배열의 요소를 제거하고 제거한 위치에 요소를 갈아끼운 배열을 반환
 */
-console.log(newFruits.splice(2, 1));
-console.log(newFruits);
+// console.log(newFruits.splice(2, 1));
+// console.log(newFruits);
 console.log(newFruits.splice(2,1,'peach'));
 console.log(newFruits);
 
