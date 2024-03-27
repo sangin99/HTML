@@ -15,6 +15,8 @@ const idMessageElement = document.getElementById('id-message');
 const emailMessageElement = document.getElementById('email-message');
 const checkAuthNumberMessageElement = document.getElementById('auth-number-message');
 
+const signInLinkElement = document.getElementById('sign-in-link');
+
 function onIdInputHandler (event) {
     const value = event.target.value;
 
@@ -109,3 +111,8 @@ checkDuplicateButtonElement.addEventListener('click' , onCheckDuplicateClickHand
 checkEmailButtonElement.addEventListener('click' , onCheckEmailClickHandler);
 checkAuthNumberButtonElement.addEventListener('click' , onCheckAuthNumberClickHandler);
 
+// 회원가입 > 로그인 버튼 동작 : 누르면 로그인 페이지로 이동
+function onSignInLinkClickHandler (event) {
+    window.location.href = '../sign-in';
+}
+signInLinkElement.addEventListener('click' , onSignInLinkClickHandler);
