@@ -1,8 +1,5 @@
 // js -> 14.Fetch -> 이벤트객체 자료 참고
 
-const ID = 'userIdentity';
-const PASSWORD = 'P!A!SS!WORD'
-
 //! 로그인 조작
 function onSignInButtonClickHandler(event) {
     const id = document.getElementById('id').value;
@@ -18,27 +15,11 @@ function onSignInButtonClickHandler(event) {
 
 //! 회원가입 버튼 조작
 function onSignUpLinkClickHandler (event) {
-    window.location.href = 'https://google.com';
+    window.location.href = '../sign-up';
 }
 
 const signUpLinkElement = document.getElementById('sign-up-link');
 signUpLinkElement.addEventListener('click', onSignUpLinkClickHandler);
-
-//! kakao - https://developers.kakao.com/
-function onKakaoButtonClickHandler (event) {
-    window.location.href = 'https://developers.kakao.com/';
-}
-
-//! naver - https://developers.naver.com/
-function onNaverButtonClickHandler (event) {
-    window.location.href = 'https://developers.naver.com/';
-}
-
-const KakaoButtonLinkElement = document.getElementById('sign-up-link-K');
-KakaoButtonLinkElement.addEventListener('click', onKakaoButtonClickHandler); 
-const NaverButtonLinkElement = document.getElementById('sign-up-link-N');
-NaverButtonLinkElement.addEventListener('click', onNaverButtonClickHandler);
-
 
 
 // textContent : 요소 안에 텍스트를 작성하기 위한 명령어
