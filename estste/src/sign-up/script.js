@@ -13,9 +13,15 @@ const checkAuthNumberButtonElement = document.getElementById('check-auth-number-
 
 const idMessageElement = document.getElementById('id-message');
 const emailMessageElement = document.getElementById('email-message');
+const checkAuthNumberMessageElement = document.getElementById('auth-number-message');
 
 function onIdInputHandler (event) {
     const value = event.target.value;
+
+    //? 멘트 지우기
+    // idMessageElement.className = 'input-message';
+    // idMessageElement.textContent = '';
+    //?
 
     if (value) checkDuplicateButtonElement.className = 'input-primary-button';
     else checkDuplicateButtonElement.className = 'input-disable-button';
@@ -37,7 +43,9 @@ function onAuthNumberInputHandler (event) {
 
 
 idInputElement.addEventListener('input', onIdInputHandler);
+
 emailInputElement.addEventListener('input', onEmailInputHandler);
+
 authNumberInputElement.addEventListener('input', onAuthNumberInputHandler);
 
 //!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>!//
@@ -58,6 +66,7 @@ function onCheckDuplicateClickHandler (event) {
 
 function onCheckEmailClickHandler (event) {
     const emailValue = emailInputElement.value;
+    if (!emailValue) return;
 
     // 이메일 형식이 아닌 것에 대한 작업 _ 이매일 정규식 작성
     const emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -80,7 +89,23 @@ function onCheckEmailClickHandler (event) {
     emailMessageElement.textContent = '인증번호가 전송되었습니다.'
 }
 
+function onCheckAuthNumberClickHandler (event) {
+    const authNumberValue = authNumberInputElement.value;
+    if (!authNumberValue) return;
+
+    const isEqualAuthNumber = authNumberValue === AUTH_NUMBER;
+    if (!isEqualAuthNumber) {
+        checkAuthNumberMessageElement.className = 'input-message error';
+        checkAuthNumberMessageElement.textContent = '인증번호가 일치하지 않습니다.';
+        return;
+    }
+
+    checkAuthNumberMessageElement.className = 'input-message primary';
+    checkAuthNumberMessageElement.textContent = '인증번호가 확인되었습니다.';
+}
+
 // 동작 명령어
 checkDuplicateButtonElement.addEventListener('click' , onCheckDuplicateClickHandler);
 checkEmailButtonElement.addEventListener('click' , onCheckEmailClickHandler);
+checkAuthNumberButtonElement.addEventListener('click' , onCheckAuthNumberClickHandler);
 
