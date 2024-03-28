@@ -30,7 +30,8 @@
     grid-area: topbar;
 
     display: flex;
-    justify-content: space-between; /* */
+    /*justify-content : 콘텐츠 항목 사이와 주위에 공간을 분배하는 방법 | 아이템들 사이의 균일하게*/
+    justify-content: space-between; 
     align-items: center;
 
     padding: 0 24px;
@@ -111,3 +112,4 @@
     padding: 24px;
     background-color: rgba(238,238,238,0.5);
 }
+
