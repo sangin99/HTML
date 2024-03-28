@@ -44,9 +44,9 @@ function onPasswordInputHandler (event) {
     password = event.target.value;
 
     const passwordReg = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,13}$/;
-    isPasswordPattern = passwordReg.test(password);
+    isPasswordPatton = passwordReg.test(password);
 
-    if (!isPasswordPattern) {
+    if (!isPasswordPatton) {
         passwordMessageElement.className = 'input-message error';
         passwordMessageElement.textContent = '영문, 숫자를 혼용하여 8 ~ 13자 입력해주세요';
         return;
