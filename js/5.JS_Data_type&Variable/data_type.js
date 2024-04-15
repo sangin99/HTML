@@ -6,8 +6,8 @@
     - string
     - boolean
     - null
-    - ubdefined
-    - sybol
+    - undefined
+    - symbol
 
     객체 타입
     - object
